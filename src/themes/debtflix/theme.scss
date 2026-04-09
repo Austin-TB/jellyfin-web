@@ -1,0 +1,295 @@
+@use '../_base/theme' with (
+    // Theme options
+    $dark: true,
+
+    // Color palette
+    $background-default: #141414,
+    $background-paper: #1a1a1a,
+    $primary-main: #E50914,
+    $primary-dark: #B20710,
+    $primary-light: #FF1A25,
+    $primary-hover: rgba(229, 9, 20, 0.2),
+    $primary-contrastText: #fff,
+    $text-primary: #fff,
+    $text-secondary: rgba(255, 255, 255, 0.7),
+    $action-focus: #E50914,
+    $action-hover: rgba(229, 9, 20, 0.2),
+
+    // Components
+    $appBar-defaultBg: #141414,
+    $appBar-transparentBg: rgba(20, 20, 20, 0.85),
+    $button-inheritContainedBg: rgba(255, 255, 255, 0.1),
+    $button-inheritContainedHoverBg: rgba(255, 255, 255, 0.2)
+);
+
+.skinHeader.semiTransparent {
+    backdrop-filter: none !important;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+    background-color: transparent;
+}
+
+.layout-tv .skinHeader.semiTransparent {
+    background: none;
+}
+
+/* Card background color variants */
+.defaultCardBackground1 {
+    background-color: #831010;
+}
+
+.defaultCardBackground2 {
+    background-color: #4a1010;
+}
+
+.defaultCardBackground3 {
+    background-color: #E50914;
+}
+
+.defaultCardBackground4 {
+    background-color: #2a0a0a;
+}
+
+.defaultCardBackground5 {
+    background-color: #6d0c0c;
+}
+
+.detailRibbon {
+    background: rgba(26, 26, 26, 0.85);
+}
+
+.layout-tv .detailRibbon {
+    background: none;
+}
+
+/* Focus and active states */
+.paper-icon-button-light.show-focus:focus {
+    color: #E50914;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .paper-icon-button-light:hover:not(:disabled) {
+        color: #FF1A25;
+        background-color: rgba(229, 9, 20, 0.15);
+    }
+}
+
+#btnDeleteImage,
+.submit,
+.btnBrowse,
+.mini,
+.btnRefresh,
+.btnManual,
+.button-submit,
+.viewTabButton,
+.button-alt,
+.btnOption {
+    background: #E50914;
+    color: #fff;
+}
+
+#btnResetPassword,
+.btnForgotPassword,
+.btnCancel,
+.button-cancel {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.fab,
+.raised {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.fab:focus,
+.raised:focus {
+    background: #E50914;
+}
+
+.button-submit:focus {
+    background: #B20710;
+}
+
+.emby-input:focus,
+.emby-textarea:focus {
+    border-color: #E50914;
+}
+
+.emby-select-withcolor:focus {
+    border-color: #E50914 !important;
+}
+
+.emby-checkbox:checked + span + .checkboxOutline {
+    border-color: #E50914;
+}
+
+.emby-checkbox:checked + span + .checkboxOutline > .checkboxIcon-checked {
+    color: #E50914;
+}
+
+.emby-checkbox:focus + span + .checkboxOutline {
+    border-color: #FF1A25;
+}
+
+.itemProgressBarForeground {
+    background-color: #E50914;
+}
+
+.countIndicator,
+.fullSyncIndicator,
+.mediaSourceIndicator,
+.playedIndicator {
+    background: #E50914;
+}
+
+.navMenuOption-selected {
+    background: #E50914 !important;
+    color: #fff;
+}
+
+.emby-tab-button-active {
+    color: #fff;
+}
+
+.emby-tab-button:hover {
+    color: #E50914;
+}
+
+.emby-tab-button.show-focus:focus {
+    color: #E50914;
+}
+
+.progressring-spiner {
+    border-color: #E50914;
+}
+
+.button-flat:hover {
+    color: #E50914;
+}
+
+.button-link {
+    color: #E50914;
+}
+
+.upNextDialog-countdownText {
+    color: #E50914;
+}
+
+.alphaPickerButton-selected {
+    color: #E50914;
+}
+
+.alphaPickerButton-tv:focus {
+    background: #E50914;
+    color: #fff !important;
+}
+
+.itemSelectionPanel {
+    border: 1px solid #E50914;
+}
+
+.selectionCommandsPanel {
+    background: #E50914;
+    color: #fff;
+}
+
+.buttonActive {
+    color: #E50914 !important;
+}
+
+.card:focus .cardBox.visualCardBox,
+.card:focus .cardBox:not(.visualCardBox) .cardScalable {
+    border-color: #E50914 !important;
+}
+
+.guide-channelHeaderCell:focus,
+.programCell:focus {
+    background-color: #E50914 !important;
+    color: #fff !important;
+}
+
+.guide-date-tab-button.emby-tab-button-active,
+.guide-date-tab-button:focus {
+    color: #E50914;
+}
+
+.guide-date-tab-button.show-focus:focus {
+    background-color: #E50914;
+    color: #fff;
+}
+
+.inputLabelFocused,
+.selectLabelFocused,
+.textareaLabelFocused {
+    color: #E50914;
+}
+
+.emby-select-tv-withcolor:focus {
+    background-color: #E50914 !important;
+    color: #fff !important;
+}
+
+.emby-button.show-focus:focus {
+    background: #E50914;
+    color: #fff;
+}
+
+.appfooter,
+.playlistSectionButton {
+    background: #1a1a1a;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+@supports (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px)) {
+    .appfooter {
+        background: rgba(26, 26, 26, 0.85);
+        backdrop-filter: blur(20px);
+    }
+}
+
+.collapseContent,
+.formDialogFooter:not(.formDialogFooter-clear),
+.formDialogHeader:not(.formDialogHeader-clear),
+.paperList,
+.visualCardBox {
+    background-color: #1a1a1a;
+}
+
+.mainDrawer {
+    color: #fff;
+    background: #141414;
+}
+
+.drawer-open {
+    background-color: #141414;
+}
+
+.toast {
+    background: #2a2a2a;
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.ratingbutton-icon-withrating {
+    color: #E50914;
+}
+
+.playstatebutton-icon-played {
+    color: #E50914;
+}
+
+/* Scrollbar styling */
+.layout-desktop,
+.scrollY {
+    scrollbar-width: thin;
+    scrollbar-color: #444 #141414;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: #141414;
+}
+
+::-webkit-scrollbar-thumb:horizontal,
+::-webkit-scrollbar-thumb:vertical {
+    border-radius: 2px;
+    background: center no-repeat #444;
+}

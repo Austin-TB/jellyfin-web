@@ -1,11 +1,11 @@
 {
-    "name": "Jellyfin",
-    "description": "The Free Software Media System",
+    "name": "Debtflix",
+    "description": "Your Personal Streaming Service",
     "lang": "en-US",
-    "short_name": "Jellyfin",
+    "short_name": "Debtflix",
     "start_url": "index.html#/home",
-    "theme_color": "#101010",
-    "background_color": "#101010",
+    "theme_color": "#141414",
+    "background_color": "#141414",
     "display": "standalone",
     "icons": [
         {

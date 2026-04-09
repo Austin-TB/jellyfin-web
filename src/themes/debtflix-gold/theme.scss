@@ -1,0 +1,90 @@
+@use '../_base/theme' with (
+    $dark: true,
+    $background-default: #1a1400,
+    $background-paper: #2d2400,
+    $primary-main: #FFB300,
+    $primary-dark: #FF8F00,
+    $primary-light: #FFD54F,
+    $primary-hover: rgba(255, 179, 0, 0.2),
+    $primary-contrastText: #000,
+    $text-primary: #fff,
+    $text-secondary: rgba(255, 255, 255, 0.7),
+    $action-focus: #FFB300,
+    $action-hover: rgba(255, 179, 0, 0.2),
+    $appBar-defaultBg: #1a1400,
+    $appBar-transparentBg: rgba(26, 20, 0, 0.85),
+    $button-inheritContainedBg: rgba(255, 255, 255, 0.1),
+    $button-inheritContainedHoverBg: rgba(255, 255, 255, 0.2)
+);
+
+.skinHeader.semiTransparent {
+    backdrop-filter: none !important;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+    background-color: transparent;
+}
+
+.layout-tv .skinHeader.semiTransparent {
+    background: none;
+}
+
+.defaultCardBackground1 { background-color: #6b4a00; }
+.defaultCardBackground2 { background-color: #2d2400; }
+.defaultCardBackground3 { background-color: #FFB300; }
+.defaultCardBackground4 { background-color: #120e00; }
+.defaultCardBackground5 { background-color: #FF8F00; }
+
+.detailRibbon { background: rgba(45, 36, 0, 0.85); }
+.layout-tv .detailRibbon { background: none; }
+
+@media (hover: hover) and (pointer: fine) {
+    .paper-icon-button-light:hover:not(:disabled) { color: #FFD54F; background-color: rgba(255, 179, 0, 0.15); }
+}
+
+.paper-icon-button-light.show-focus:focus { color: #FFB300; }
+
+#btnDeleteImage, .submit, .btnBrowse, .mini, .btnRefresh, .btnManual,
+.button-submit, .viewTabButton, .button-alt, .btnOption { background: #FFB300; color: #000; }
+
+.fab:focus, .raised:focus { background: #FFB300; }
+.button-submit:focus { background: #FF8F00; }
+.emby-input:focus, .emby-textarea:focus { border-color: #FFB300; }
+.emby-select-withcolor:focus { border-color: #FFB300 !important; }
+.emby-checkbox:checked + span + .checkboxOutline { border-color: #FFB300; }
+.emby-checkbox:checked + span + .checkboxOutline > .checkboxIcon-checked { color: #FFB300; }
+.emby-checkbox:focus + span + .checkboxOutline { border-color: #FFD54F; }
+.itemProgressBarForeground { background-color: #FFB300; }
+.countIndicator, .fullSyncIndicator, .mediaSourceIndicator, .playedIndicator { background: #FFB300; }
+.navMenuOption-selected { background: #FFB300 !important; color: #000; }
+.emby-tab-button:hover { color: #FFB300; }
+.emby-tab-button.show-focus:focus { color: #FFB300; }
+.progressring-spiner { border-color: #FFB300; }
+.button-flat:hover { color: #FFB300; }
+.button-link { color: #FFB300; }
+.upNextDialog-countdownText { color: #FFB300; }
+.alphaPickerButton-selected { color: #FFB300; }
+.alphaPickerButton-tv:focus { background: #FFB300; color: #000 !important; }
+.itemSelectionPanel { border: 1px solid #FFB300; }
+.selectionCommandsPanel { background: #FFB300; color: #000; }
+.buttonActive { color: #FFB300 !important; }
+.card:focus .cardBox.visualCardBox,
+.card:focus .cardBox:not(.visualCardBox) .cardScalable { border-color: #FFB300 !important; }
+.guide-channelHeaderCell:focus, .programCell:focus { background-color: #FFB300 !important; color: #000 !important; }
+.inputLabelFocused, .selectLabelFocused, .textareaLabelFocused { color: #FFB300; }
+.emby-button.show-focus:focus { background: #FFB300; color: #000; }
+.ratingbutton-icon-withrating { color: #FFB300; }
+.playstatebutton-icon-played { color: #FFB300; }
+
+.appfooter, .playlistSectionButton { background: #2d2400; color: rgba(255, 255, 255, 0.78); }
+@supports (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px)) {
+    .appfooter { background: rgba(45, 36, 0, 0.85); backdrop-filter: blur(20px); }
+}
+
+.collapseContent, .formDialogFooter:not(.formDialogFooter-clear),
+.formDialogHeader:not(.formDialogHeader-clear), .paperList, .visualCardBox { background-color: #2d2400; }
+.mainDrawer { color: #fff; background: #1a1400; }
+.drawer-open { background-color: #1a1400; }
+.toast { background: #3a2e00; color: rgba(255, 255, 255, 0.87); }
+
+.layout-desktop, .scrollY { scrollbar-width: thin; scrollbar-color: #6b5a00 #1a1400; }
+::-webkit-scrollbar-track-piece { background-color: #1a1400; }
+::-webkit-scrollbar-thumb:horizontal, ::-webkit-scrollbar-thumb:vertical { border-radius: 2px; background: center no-repeat #6b5a00; }

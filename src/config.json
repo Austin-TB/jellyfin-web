@@ -3,6 +3,27 @@
   "multiserver": false,
   "themes": [
     {
+      "name": "Debtflix",
+      "id": "debtflix",
+      "color": "#E50914",
+      "default": true
+    }, {
+      "name": "Debtflix Blue",
+      "id": "debtflix-blue",
+      "color": "#0077B6"
+    }, {
+      "name": "Debtflix Green",
+      "id": "debtflix-green",
+      "color": "#00C853"
+    }, {
+      "name": "Debtflix Purple",
+      "id": "debtflix-purple",
+      "color": "#9C27B0"
+    }, {
+      "name": "Debtflix Gold",
+      "id": "debtflix-gold",
+      "color": "#FFB300"
+    }, {
       "name": "Apple TV",
       "id": "appletv",
       "color": "#bcbcbc"
@@ -13,8 +34,7 @@
     }, {
       "name": "Dark",
       "id": "dark",
-      "color": "#202020",
-      "default": true
+      "color": "#202020"
     }, {
       "name": "Light",
       "id": "light",

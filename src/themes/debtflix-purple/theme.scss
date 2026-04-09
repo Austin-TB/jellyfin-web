@@ -1,0 +1,90 @@
+@use '../_base/theme' with (
+    $dark: true,
+    $background-default: #1a0a1f,
+    $background-paper: #2d1536,
+    $primary-main: #9C27B0,
+    $primary-dark: #7B1FA2,
+    $primary-light: #CE93D8,
+    $primary-hover: rgba(156, 39, 176, 0.2),
+    $primary-contrastText: #fff,
+    $text-primary: #fff,
+    $text-secondary: rgba(255, 255, 255, 0.7),
+    $action-focus: #9C27B0,
+    $action-hover: rgba(156, 39, 176, 0.2),
+    $appBar-defaultBg: #1a0a1f,
+    $appBar-transparentBg: rgba(26, 10, 31, 0.85),
+    $button-inheritContainedBg: rgba(255, 255, 255, 0.1),
+    $button-inheritContainedHoverBg: rgba(255, 255, 255, 0.2)
+);
+
+.skinHeader.semiTransparent {
+    backdrop-filter: none !important;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+    background-color: transparent;
+}
+
+.layout-tv .skinHeader.semiTransparent {
+    background: none;
+}
+
+.defaultCardBackground1 { background-color: #5a1a6b; }
+.defaultCardBackground2 { background-color: #2d1536; }
+.defaultCardBackground3 { background-color: #9C27B0; }
+.defaultCardBackground4 { background-color: #120818; }
+.defaultCardBackground5 { background-color: #7B1FA2; }
+
+.detailRibbon { background: rgba(45, 21, 54, 0.85); }
+.layout-tv .detailRibbon { background: none; }
+
+@media (hover: hover) and (pointer: fine) {
+    .paper-icon-button-light:hover:not(:disabled) { color: #CE93D8; background-color: rgba(156, 39, 176, 0.15); }
+}
+
+.paper-icon-button-light.show-focus:focus { color: #9C27B0; }
+
+#btnDeleteImage, .submit, .btnBrowse, .mini, .btnRefresh, .btnManual,
+.button-submit, .viewTabButton, .button-alt, .btnOption { background: #9C27B0; color: #fff; }
+
+.fab:focus, .raised:focus { background: #9C27B0; }
+.button-submit:focus { background: #7B1FA2; }
+.emby-input:focus, .emby-textarea:focus { border-color: #9C27B0; }
+.emby-select-withcolor:focus { border-color: #9C27B0 !important; }
+.emby-checkbox:checked + span + .checkboxOutline { border-color: #9C27B0; }
+.emby-checkbox:checked + span + .checkboxOutline > .checkboxIcon-checked { color: #9C27B0; }
+.emby-checkbox:focus + span + .checkboxOutline { border-color: #CE93D8; }
+.itemProgressBarForeground { background-color: #9C27B0; }
+.countIndicator, .fullSyncIndicator, .mediaSourceIndicator, .playedIndicator { background: #9C27B0; }
+.navMenuOption-selected { background: #9C27B0 !important; color: #fff; }
+.emby-tab-button:hover { color: #9C27B0; }
+.emby-tab-button.show-focus:focus { color: #9C27B0; }
+.progressring-spiner { border-color: #9C27B0; }
+.button-flat:hover { color: #9C27B0; }
+.button-link { color: #9C27B0; }
+.upNextDialog-countdownText { color: #9C27B0; }
+.alphaPickerButton-selected { color: #9C27B0; }
+.alphaPickerButton-tv:focus { background: #9C27B0; color: #fff !important; }
+.itemSelectionPanel { border: 1px solid #9C27B0; }
+.selectionCommandsPanel { background: #9C27B0; color: #fff; }
+.buttonActive { color: #9C27B0 !important; }
+.card:focus .cardBox.visualCardBox,
+.card:focus .cardBox:not(.visualCardBox) .cardScalable { border-color: #9C27B0 !important; }
+.guide-channelHeaderCell:focus, .programCell:focus { background-color: #9C27B0 !important; color: #fff !important; }
+.inputLabelFocused, .selectLabelFocused, .textareaLabelFocused { color: #9C27B0; }
+.emby-button.show-focus:focus { background: #9C27B0; color: #fff; }
+.ratingbutton-icon-withrating { color: #9C27B0; }
+.playstatebutton-icon-played { color: #9C27B0; }
+
+.appfooter, .playlistSectionButton { background: #2d1536; color: rgba(255, 255, 255, 0.78); }
+@supports (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px)) {
+    .appfooter { background: rgba(45, 21, 54, 0.85); backdrop-filter: blur(20px); }
+}
+
+.collapseContent, .formDialogFooter:not(.formDialogFooter-clear),
+.formDialogHeader:not(.formDialogHeader-clear), .paperList, .visualCardBox { background-color: #2d1536; }
+.mainDrawer { color: #fff; background: #1a0a1f; }
+.drawer-open { background-color: #1a0a1f; }
+.toast { background: #3a1a45; color: rgba(255, 255, 255, 0.87); }
+
+.layout-desktop, .scrollY { scrollbar-width: thin; scrollbar-color: #5a2a6b #1a0a1f; }
+::-webkit-scrollbar-track-piece { background-color: #1a0a1f; }
+::-webkit-scrollbar-thumb:horizontal, ::-webkit-scrollbar-thumb:vertical { border-radius: 2px; background: center no-repeat #5a2a6b; }

@@ -7,6 +7,7 @@ import { toApi } from 'utils/jellyfin-apiclient/compat';
 import { queryClient } from 'utils/query/queryClient';
 
 import { loadRecordings } from './sections/activeRecordings';
+import { loadFeatured } from './sections/featured';
 import { loadLibraryButtons } from './sections/libraryButtons';
 import { loadLibraryTiles } from './sections/libraryTiles';
 import { loadLiveTV } from './sections/liveTv';
@@ -61,6 +62,11 @@ export function loadSections(elem, apiClient, user, userSettings) {
             let html = '';
 
             if (userViews.length) {
+                // Hero/billboard section (hidden on TV layout)
+                if (!layoutManager.tv) {
+                    html += '<div class="heroSectionContainer"></div>';
+                }
+
                 const userSectionCount = 10;
                 // TV layout can have an extra section to ensure libraries are visible
                 const totalSectionCount = layoutManager.tv ? userSectionCount + 1 : userSectionCount;
@@ -72,6 +78,13 @@ export function loadSections(elem, apiClient, user, userSettings) {
                 elem.classList.add('homeSectionsContainer');
 
                 const promises = [];
+
+                // Load hero/featured section
+                const heroContainer = elem.querySelector('.heroSectionContainer');
+                if (heroContainer) {
+                    promises.push(loadFeatured(heroContainer, apiClient, user));
+                }
+
                 const sections = getAllSectionsToShow(userSettings, userSectionCount);
                 for (let i = 0; i < sections.length; i++) {
                     promises.push(loadSection(elem, apiClient, user, userSettings, userViews, sections, i));

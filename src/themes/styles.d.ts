@@ -5,6 +5,11 @@ declare module '@mui/material/styles' {
     interface ColorSchemeOverrides {
         appletv: true;
         blueradiance: true;
+        debtflix: true;
+        'debtflix-blue': true;
+        'debtflix-gold': true;
+        'debtflix-green': true;
+        'debtflix-purple': true;
         purplehaze: true;
         wmc: true;
     }
