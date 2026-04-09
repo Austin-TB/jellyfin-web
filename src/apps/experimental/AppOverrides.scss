@@ -18,13 +18,60 @@ $mui-bp-xl: 1536px;
     }
 }
 
-// Fix the padding of some pages
-.homePage.libraryPage.withTabs, // Home page
-// Library pages excluding the item details page and tabbed pages
+// Home page: minimal top padding so hero renders under the transparent navbar
+.homePage.libraryPage.withTabs {
+    padding-top: 0 !important;
+}
+
+// Library pages excluding the item details page and home page
 .libraryPage:not(
     .itemDetailPage
+):not(
+    .homePage
 ) {
     padding-top: 3.25rem !important;
+}
+
+/* ===== Responsive refinements ===== */
+
+/* Mobile: slightly larger tap targets for cards */
+@media (max-width: #{$mui-bp-sm}) {
+    .card-hoverable {
+        /* Disable hover expansion on mobile */
+        .cardExpandedInfo {
+            display: none !important;
+        }
+    }
+
+    /* Hero content smaller on mobile */
+    .heroContent {
+        max-width: 80% !important;
+        padding: 0 5% 10% !important;
+    }
+
+    /* Section padding reduced on mobile */
+    .sectionTitle {
+        font-size: 1.1rem;
+        padding-left: 5%;
+    }
+
+    /* Login page mobile adjustments */
+    .debtflixLogin-heading {
+        font-size: 1.8rem !important;
+    }
+}
+
+/* Tablet: 4-5 cards per row */
+@media (min-width: #{$mui-bp-sm}) and (max-width: #{$mui-bp-md}) {
+    .overflowPortraitCard,
+    .overflowSquareCard {
+        width: 22vw;
+    }
+
+    .overflowBackdropCard,
+    .overflowSmallBackdropCard {
+        width: 32vw;
+    }
 }
 
 .layout-mobile {

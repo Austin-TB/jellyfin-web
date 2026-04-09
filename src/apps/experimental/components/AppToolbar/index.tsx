@@ -1,4 +1,6 @@
 import Stack from '@mui/material/Stack';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { type Theme } from '@mui/material/styles';
 import React, { type FC } from 'react';
 import { useLocation } from 'react-router-dom';
 
@@ -23,6 +25,7 @@ const ExperimentalAppToolbar: FC<AppToolbarProps> = ({
     onDrawerButtonClick
 }) => {
     const location = useLocation();
+    const isMediumScreen = useMediaQuery((t: Theme) => t.breakpoints.up('md'));
 
     // The video osd does not show the standard toolbar
     if (location.pathname === '/video') return null;
@@ -42,24 +45,24 @@ const ExperimentalAppToolbar: FC<AppToolbarProps> = ({
                     <SearchButton />
                 </>
             )}
-            isDrawerAvailable={isDrawerAvailable}
+            isDrawerAvailable={!isMediumScreen && isDrawerAvailable}
             isDrawerOpen={isDrawerOpen}
             onDrawerButtonClick={onDrawerButtonClick}
             isBackButtonAvailable={isBackButtonAvailable}
             isUserMenuAvailable={!isPublicPath}
         >
-            {!isDrawerAvailable && (
-                <Stack
-                    direction='row'
-                    spacing={0.5}
-                >
-                    <ServerButton />
+            <Stack
+                direction='row'
+                spacing={0.5}
+                alignItems='center'
+            >
+                <ServerButton />
 
-                    {!isPublicPath && (
-                        <UserViewNav />
-                    )}
-                </Stack>
-            )}
+                {/* On desktop, always show nav links inline (Netflix-style) */}
+                {isMediumScreen && !isPublicPath && (
+                    <UserViewNav />
+                )}
+            </Stack>
         </AppToolbar>
     );
 };

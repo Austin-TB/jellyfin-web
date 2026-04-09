@@ -14,6 +14,7 @@ import { loadLiveTV } from './sections/liveTv';
 import { loadNextUp } from './sections/nextUp';
 import { loadRecentlyAdded } from './sections/recentlyAdded';
 import { loadResume } from './sections/resume';
+import { loadTopTen } from './sections/topTen';
 
 import 'elements/emby-button/paper-icon-button-light';
 import 'elements/emby-itemscontainer/emby-itemscontainer';
@@ -181,6 +182,9 @@ function loadSection(page, apiClient, user, userSettings, userViews, allSections
             return loadResume(elem, apiClient, 'HeaderContinueReading', 'Book', userSettings, options);
         case HomeSectionType.SmallLibraryTiles:
             loadLibraryTiles(elem, userViews, options);
+            break;
+        case HomeSectionType.TopTen:
+            loadTopTen(elem, apiClient, options);
             break;
         default:
             elem.innerHTML = '';

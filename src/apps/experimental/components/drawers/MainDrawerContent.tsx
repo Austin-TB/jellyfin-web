@@ -30,6 +30,12 @@ const MainDrawerContent = () => {
 
     const isHomeSelected = location.pathname === '/home' && (!location.search || location.search === '?tab=0');
 
+    const selectedSx = {
+        color: '#E50914',
+        '& .MuiListItemIcon-root': { color: '#E50914' },
+        '&:hover': { backgroundColor: 'rgba(229, 9, 20, 0.08)' }
+    };
+
     return (
         <>
             {/* MAIN LINKS */}
@@ -38,7 +44,7 @@ const MainDrawerContent = () => {
                     <DrawerHeaderLink />
                 </ListItem>
                 <ListItem disablePadding>
-                    <ListItemLink to='/home' selected={isHomeSelected}>
+                    <ListItemLink to='/home' selected={isHomeSelected} sx={isHomeSelected ? selectedSx : undefined}>
                         <ListItemIcon>
                             <Home />
                         </ListItemIcon>

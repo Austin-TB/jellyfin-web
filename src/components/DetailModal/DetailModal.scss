@@ -1,0 +1,199 @@
+/* ===== Detail Modal ===== */
+
+.detailModal-dialog {
+    background-color: #181818;
+    color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    max-height: 90vh;
+}
+
+.detailModal-backdrop {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    background-size: cover;
+    background-position: center top;
+    flex-shrink: 0;
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            to bottom,
+            rgba(24, 24, 24, 0) 30%,
+            rgba(24, 24, 24, 0.7) 70%,
+            #181818 100%
+        );
+    }
+}
+
+.detailModal-backdropContent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    z-index: 1;
+}
+
+.detailModal-title {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 0.75rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.detailModal-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.detailModal-playBtn {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: #fff !important;
+    color: #000 !important;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.8) !important;
+    }
+}
+
+.detailModal-iconBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(42, 42, 42, 0.7) !important;
+    border: 2px solid rgba(255, 255, 255, 0.5) !important;
+    border-radius: 50% !important;
+    width: 2.5rem;
+    height: 2.5rem;
+    color: #fff !important;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+
+    &:hover {
+        border-color: #fff !important;
+        background: rgba(42, 42, 42, 0.9) !important;
+    }
+}
+
+.detailModal-body {
+    padding: 0 1.5rem 2rem;
+    overflow-y: auto;
+}
+
+.detailModal-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.detailModal-match {
+    color: #46d369;
+    font-weight: 700;
+}
+
+.detailModal-year,
+.detailModal-runtime {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.detailModal-rating {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 0 0.4rem;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    border-radius: 2px;
+}
+
+.detailModal-overview {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.25rem;
+}
+
+.detailModal-infoRow {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+}
+
+.detailModal-infoLabel {
+    color: rgba(255, 255, 255, 0.4);
+    margin-right: 0.35rem;
+}
+
+.detailModal-infoValue {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Episode list */
+.detailModal-episodes {
+    margin-bottom: 1.5rem;
+}
+
+.detailModal-episodeList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.detailModal-episode {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.08);
+    }
+}
+
+/* Similar titles */
+.detailModal-similar {
+    margin-bottom: 1rem;
+}
+
+.detailModal-similarGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+
+    @media (max-width: 600px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.detailModal-similarCard {
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+
+    &:hover {
+        transform: scale(1.03);
+    }
+}

@@ -22,6 +22,11 @@
     $button-inheritContainedHoverBg: rgba(255, 255, 255, 0.2)
 );
 
+/* Netflix-style navbar transitions */
+.skinHeader {
+    transition: background-color 0.4s ease, backdrop-filter 0.4s ease;
+}
+
 .skinHeader.semiTransparent {
     backdrop-filter: none !important;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
@@ -277,7 +282,15 @@
     color: #E50914;
 }
 
-/* Scrollbar styling */
+/* ===== Global interactive transitions ===== */
+a,
+button,
+.emby-button,
+[is="emby-button"] {
+    transition: color 0.2s ease, background-color 0.2s ease, opacity 0.2s ease, border-color 0.2s ease;
+}
+
+/* ===== Scrollbar styling ===== */
 .layout-desktop,
 .scrollY {
     scrollbar-width: thin;

@@ -9,6 +9,7 @@ import type { CardShape } from '../utils/shape';
 
 import CardOverlayButtons from './CardOverlayButtons';
 import CardHoverMenu from './CardHoverMenu';
+import CardExpandedInfo from './CardExpandedInfo';
 import CardOuterFooter from './CardOuterFooter';
 import CardContent from './CardContent';
 
@@ -37,6 +38,10 @@ const CardBox: FC<CardBoxProps> = ({
     coveredImage,
     overlayText
 }) => {
+    const hasExpandableContent = Boolean(
+        item.Overview || item.CommunityRating || item.OfficialRating || item.RunTimeTicks || (item.Genres?.length)
+    );
+
     return (
         <div className={className}>
             <div className='cardScalable'>
@@ -74,6 +79,12 @@ const CardBox: FC<CardBoxProps> = ({
                     forceName={forceName}
                     overlayText={overlayText}
                     imgUrl={imgUrl}
+                />
+            )}
+            {layoutManager.desktop && hasExpandableContent && !cardOptions.disableHoverMenu && (
+                <CardExpandedInfo
+                    item={item}
+                    cardOptions={cardOptions}
                 />
             )}
         </div>

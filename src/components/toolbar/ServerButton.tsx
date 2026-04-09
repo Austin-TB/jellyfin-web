@@ -1,37 +1,30 @@
-import icon from '../../assets/debtflix-icon.svg';
-import Button from '@mui/material/Button/Button';
+import logo from '../../assets/debtflix-logo.svg';
+import Box from '@mui/material/Box';
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 
-import { useSystemInfo } from 'hooks/useSystemInfo';
-
 const ServerButton: FC = () => {
-    const {
-        data: systemInfo,
-        isPending
-    } = useSystemInfo();
-
     return (
-        <Button
-            variant='text'
-            size='large'
-            color='inherit'
-            startIcon={
-                <img
-                    src={icon}
-                    alt=''
-                    aria-hidden
-                    style={{
-                        maxHeight: '1.25em',
-                        maxWidth: '1.25em'
-                    }}
-                />
-            }
+        <Box
             component={Link}
             to='/'
+            sx={{
+                display: 'flex',
+                alignItems: 'center',
+                textDecoration: 'none',
+                mr: 1
+            }}
         >
-            {isPending ? '' : (systemInfo?.ServerName || 'Debtflix')}
-        </Button>
+            <Box
+                component='img'
+                src={logo}
+                alt='Debtflix'
+                sx={{
+                    height: { xs: '1.4rem', md: '1.6rem' },
+                    width: 'auto'
+                }}
+            />
+        </Box>
     );
 };
 

@@ -21,11 +21,81 @@
     overflow: hidden;
 }
 
-/* Section title enhancements */
+/* Netflix-style section titles */
 .sectionTitle {
     font-weight: 700;
     font-size: 1.4rem;
     letter-spacing: -0.01em;
+    padding-left: 4%;
+    color: #e5e5e5;
+}
+
+.sectionTitle:hover {
+    color: #fff;
+}
+
+.sectionTitle-link::after {
+    content: " \203A";
+    font-size: 1.2em;
+    margin-left: 0.3em;
+    opacity: 0;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.sectionTitle-link:hover::after {
+    opacity: 1;
+    transform: translateX(0.2em);
+}
+
+/* ===== Top 10 Row ===== */
+
+.topTen-container {
+    /* Extra left padding to accommodate the large number badges */
+    padding-left: 3%;
+}
+
+.topTen-item {
+    position: relative;
+    display: inline-flex;
+    align-items: flex-end;
+    flex-shrink: 0;
+}
+
+.topTen-badge {
+    /* Large bold number overlapping left side of card */
+    position: relative;
+    z-index: 1;
+    font-size: 8rem;
+    font-weight: 900;
+    line-height: 1;
+    color: #141414;
+    -webkit-text-stroke: 4px rgba(255, 255, 255, 0.4);
+    text-stroke: 4px rgba(255, 255, 255, 0.4);
+    user-select: none;
+    pointer-events: none;
+    margin-right: -1.5rem;
+    margin-bottom: 0.2rem;
+    min-width: 4rem;
+    text-align: right;
+
+    /* Single digit numbers (1-9) are larger */
+    font-family: "Impact", "Arial Black", sans-serif;
+    letter-spacing: -0.05em;
+}
+
+.topTenCard {
+    position: relative;
+    z-index: 2;
+}
+
+/* Responsive adjustments for Top 10 badges */
+@media (max-width: 50em) {
+    .topTen-badge {
+        font-size: 5rem;
+        margin-right: -1rem;
+        min-width: 3rem;
+    }
 }
 
 /* ===== Hero/Billboard Section ===== */

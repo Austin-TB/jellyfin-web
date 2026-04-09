@@ -1,0 +1,124 @@
+/* Netflix-style expanded card info panel */
+.cardExpandedInfo {
+    position: absolute;
+    top: 100%;
+    left: -0.45em;
+    right: -0.45em;
+    background: #181818;
+    border-radius: 0 0 0.3em 0.3em;
+    padding: 0.8em;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+    z-index: 20;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-4px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.card-hoverable:hover .cardExpandedInfo {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.cardExpandedInfo-buttons {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-bottom: 0.5em;
+}
+
+.cardExpandedInfo-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+    background: rgba(42, 42, 42, 0.6);
+    color: #fff;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+    padding: 0;
+}
+
+.cardExpandedInfo-btn:hover {
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.cardExpandedInfo-btn .material-icons {
+    font-size: 1.1em;
+}
+
+.cardExpandedInfo-playBtn {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+}
+
+.cardExpandedInfo-playBtn:hover {
+    background: rgba(255, 255, 255, 0.85);
+    color: #000;
+}
+
+.cardExpandedInfo-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 0.75em;
+    margin-bottom: 0.4em;
+    flex-wrap: wrap;
+}
+
+.cardExpandedInfo-rating {
+    color: #46d369;
+    font-weight: 700;
+}
+
+.cardExpandedInfo-year {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.cardExpandedInfo-officialRating {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 0 0.4em;
+    font-size: 0.85em;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.cardExpandedInfo-runtime {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.cardExpandedInfo-overview {
+    font-size: 0.7em;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.7);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 0.4em;
+}
+
+.cardExpandedInfo-genres {
+    display: flex;
+    gap: 0.3em;
+    flex-wrap: wrap;
+}
+
+.cardExpandedInfo-genre {
+    font-size: 0.65em;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.cardExpandedInfo-genre::after {
+    content: " \2022";
+    margin-left: 0.3em;
+}
+
+.cardExpandedInfo-genre:last-child::after {
+    content: "";
+}

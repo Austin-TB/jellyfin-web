@@ -2,15 +2,12 @@ import type { BaseItemDto } from '@jellyfin/sdk/lib/generated-client/models/base
 import { BaseItemKind } from '@jellyfin/sdk/lib/generated-client/models/base-item-kind';
 import { CollectionType } from '@jellyfin/sdk/lib/generated-client/models/collection-type';
 import ArrowDropDown from '@mui/icons-material/ArrowDropDown';
-import Favorite from '@mui/icons-material/Favorite';
 import Button from '@mui/material/Button/Button';
-import Icon from '@mui/material/Icon';
 import { Theme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import React, { useCallback, useMemo, useState } from 'react';
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
 
-import LibraryIcon from 'apps/experimental/components/LibraryIcon';
 import { MetaView } from 'apps/experimental/constants/metaView';
 import { useAncestors } from 'apps/experimental/features/libraries/hooks/api/useAncestors';
 import { isDetailsPath, isLibraryPath } from 'apps/experimental/features/libraries/utils/path';
@@ -114,12 +111,26 @@ const UserViewNav = () => {
 
     if (isPending) return null;
 
+    const navLinkSx = (isActive: boolean) => ({
+        fontSize: '0.85rem',
+        fontWeight: isActive ? 700 : 400,
+        textTransform: 'none' as const,
+        minWidth: 'auto',
+        px: 1,
+        py: 0.5,
+        color: isActive ? '#fff' : 'rgba(255,255,255,0.7)',
+        transition: 'color 0.2s ease',
+        '&:hover': {
+            color: '#fff',
+            backgroundColor: 'transparent'
+        }
+    });
+
     return (
         <>
             <Button
                 variant='text'
-                color={(currentUserView?.Id === MetaView.Favorites.Id) ? 'primary' : 'inherit'}
-                startIcon={<Favorite />}
+                sx={navLinkSx(currentUserView?.Id === MetaView.Favorites.Id)}
                 component={Link}
                 to='/home?tab=1'
             >
@@ -130,8 +141,7 @@ const UserViewNav = () => {
                 <Button
                     key={link.name}
                     variant='text'
-                    color='inherit'
-                    startIcon={<Icon>{link.icon || 'link'}</Icon>}
+                    sx={navLinkSx(false)}
                     component='a'
                     href={link.url}
                     target='_blank'
@@ -145,8 +155,7 @@ const UserViewNav = () => {
                 <Button
                     key={view.Id}
                     variant='text'
-                    color={(view.Id === currentUserView?.Id) ? 'primary' : 'inherit'}
-                    startIcon={<LibraryIcon item={view} />}
+                    sx={navLinkSx(view.Id === currentUserView?.Id)}
                     component={Link}
                     to={appRouter.getRouteUrl(view, { context: view.CollectionType }).substring(1)}
                 >
@@ -157,7 +166,7 @@ const UserViewNav = () => {
                 <>
                     <Button
                         variant='text'
-                        color='inherit'
+                        sx={navLinkSx(false)}
                         endIcon={<ArrowDropDown />}
                         aria-controls={OVERFLOW_MENU_ID}
                         aria-haspopup='true'

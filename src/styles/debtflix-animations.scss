@@ -1,0 +1,123 @@
+/* ============================================
+   Debtflix Global Animations & Transitions
+   ============================================ */
+
+/* ---- Keyframes ---- */
+
+@keyframes debtflix-fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes debtflix-slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(1.5rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes debtflix-scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes debtflix-progressBar {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* ---- Page transitions ---- */
+
+/* Fade-in when a page is shown */
+.page.is-active,
+.mainAnimatedPage {
+    animation: debtflix-fadeIn 0.3s ease;
+}
+
+/* ---- Section loading ---- */
+
+/* Staggered slide-up when home sections load */
+.verticalSection {
+    animation: debtflix-slideUp 0.4s ease both;
+}
+
+@for $i from 0 through 9 {
+    .section#{$i} {
+        animation-delay: #{$i * 0.06}s;
+    }
+}
+
+/* ---- Global interactive element transitions ---- */
+
+a,
+button,
+.paper-icon-button-light,
+.emby-button,
+.itemAction,
+.card {
+    transition-property: color, background-color, opacity, border-color, box-shadow;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+}
+
+/* Don't clobber card scale transforms */
+.card.show-animation {
+    transition-property: none;
+}
+
+.card.show-animation .cardBox {
+    transition-property: transform, box-shadow;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ---- Netflix-style top loading bar ---- */
+
+.debtflix-loading-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #E50914;
+    z-index: 9999;
+    transform-origin: left;
+    animation: debtflix-progressBar 1.5s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+/* ---- Image fade-in from blurhash ---- */
+
+.cardImage,
+.imgResponsive {
+    animation: debtflix-fadeIn 0.4s ease;
+}
+
+/* ---- Dialog/modal entrance ---- */
+
+.dialogContainer .dialog,
+.MuiDialog-paper {
+    animation: debtflix-scaleIn 0.25s ease;
+}

@@ -9,6 +9,7 @@ import AppBody from 'components/AppBody';
 import CustomCss from 'components/CustomCss';
 import ElevationScroll from 'components/ElevationScroll';
 import ThemeCss from 'components/ThemeCss';
+import DetailModalProvider from 'components/DetailModal/DetailModalProvider';
 import { useApi } from 'hooks/useApi';
 
 import AppToolbar from './components/AppToolbar';
@@ -67,9 +68,11 @@ export const Component = () => {
                         flexGrow: 1
                     }}
                 >
-                    <AppBody>
-                        <Outlet />
-                    </AppBody>
+                    <DetailModalProvider>
+                        <AppBody>
+                            <Outlet />
+                        </AppBody>
+                    </DetailModalProvider>
                 </Box>
             </Box>
             <ThemeCss />

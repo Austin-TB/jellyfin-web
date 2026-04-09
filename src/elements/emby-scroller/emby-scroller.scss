@@ -5,8 +5,16 @@
 }
 
 .emby-scroller {
-    @include conditional-max(padding-left, 3.3%, env(safe-area-inset-left));
-    @include conditional-max(padding-right, 3.3%, env(safe-area-inset-right));
+    @include conditional-max(padding-left, 4%, env(safe-area-inset-left));
+    @include conditional-max(padding-right, 4%, env(safe-area-inset-right));
+
+    /* Netflix-style: hide scrollbar */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 .servers > .card > .cardBox {
@@ -18,12 +26,12 @@
 .itemsContainer > .card > .cardBox {
     [dir="ltr"] & {
         margin-left: 0;
-        margin-right: 1.2em;
+        margin-right: 0.4em;
     }
 
     [dir="rtl"] & {
         margin-right: 0;
-        margin-left: 1.2em;
+        margin-left: 0.4em;
     }
 }
 
